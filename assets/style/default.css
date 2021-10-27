@@ -2,35 +2,37 @@
     Rodrick hates their life.
 --------------------------- # # # # #
 
-    This is the default theme: Stone News!
+    This is the DeadJournals's site theme!
 
     Feel free to edit the variables under `:root`
     to your liking.
 */
 
 /* The fonts used for this theme. Feel free to change theme. */
-@import url('https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Libre+Barcode+39+Text&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+English&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playball&display=swap');
 
 :root {
     --accent-color  : purple;
 
-    --text-color    : #000; /* Main text color */
-    --back-image    : url('../images/stones.jpg'); /* Body background image */
-    --back-overlay  : url('../images/dots.png'); /* Background image overlay image.
+    --text-color    : #ddd; /* Main text color */
+    --back-image    : url('../images/mushrooms.jpg'); /* Body background image */
+    --back-overlay  : url('../images/dot.png'); /* Background image overlay image.
         If you want there to be no overlay, then set this image to '../images/trans.png'.
     */
-    --back-color    : #eee; /* Background color of main area */
+    --back-color    : #decfe9dd; /* Background color of main area */
+    --color-back    : #2f1f39dd;
 
-    --nav-color     : #222; /* Navigation background color */
-    --nav-txt-color : #eee; /* Navigation text color */
+    --nav-color     : #32174d00; /* Navigation background color */
+    --nav-txt-color : #32174d; /* Navigation text color */
+    --nav-btn-color : #ddd;
 
     --border-color  : #222; /* Color of border */
-    --border-style  : double; /* The style of the border */
+    --border-style  : none; /* The style of the border */
     --border-width  : 10px; /* The border's width */
 
-    --font-main     : 'Syne Mono', monospace; /* The font used for almost everything */
-    --font-title    : 'Libre Barcode 39 Text', serif; /* The font used for page titles */
+    --font-main     : 'IM Fell English', serif; /* The font used for almost everything */
+    --font-title    : 'Playball', serif; /* The font used for page titles */
     --text-indent   : 2em; /* The width of paragraph indents. Just put `0px` if you don't want any. */
 }
 
@@ -63,6 +65,8 @@ hr {
     border-left: none;
     border-right: none;
     border-width: medium;
+
+    color: #111;
 }
 
 #nav {
@@ -78,9 +82,14 @@ hr {
     text-align: center;
     color: var(--nav-txt-color);
     text-decoration: none;
+    background-color: var(--nav-btn-color);
+    border-radius: 50px;
+    padding: 5px;
+    /*font-family: cursive, sans-serif;*/
 }
 #nav a:hover {
-    text-decoration: underline;
+    background-color: var(--nav-txt-color);
+    color: var(--nav-btn-color);
 }
 
 #changePost {
@@ -116,9 +125,17 @@ hr {
 
 footer {
     text-align: center;
-    font-size: .8em;
-    opacity: .8;
+    font-size: 1em;
+    opacity: 1;
     margin: 5px;
+    color: var(--color-back);
+    /*
+    text-shadow:
+		-1px -1px 0 #ddd,
+		1px -1px 0 #ddd,
+		-1px 1px 0 #ddd,
+		1px 1px 0 #ddd;
+        */
 }
 
 .main_content {
@@ -133,15 +150,23 @@ footer {
     min-height: 100px;
     margin: 25px auto;
 
+    border-radius: 50px;
+
     padding: 10px;
 }
 
 #postTitle, #blogTitle {
     font-family: var(--font-title);
     font-size: 3em;
-    letter-spacing: 5px;
+    letter-spacing: 0px;
 
     line-height: 1.1;
+
+    text-shadow:
+		-1px -1px 0 #000,
+		1px -1px 0 #000,
+		2px 4px 0 #000,
+		1px 1px 0 #000;
 }
 
 .heading {
@@ -150,20 +175,24 @@ footer {
 }
 
 .postcontent {
+    /*
     border-style: dotted;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 20px;
-    padding-right: 20px;
+    background-color: var(--color-back);
+    */
+    font-size: 1.2em;
     min-height: 20px;
-}
+    color: #222;
 
-.indexcontent {
-    min-height: 20px;
-}
+    padding: 20px;
 
-.aboutcontent {
-    min-height: 20px;
+    border-radius: 100px;
+    /*
+    text-shadow:
+		-1px -1px 0 #000,
+		1px -1px 0 #000,
+		-1px 1px 0 #000,
+		1px 1px 0 #000;
+        */
 }
 
 #aboutColumn {
