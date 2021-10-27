@@ -40,8 +40,8 @@ let author = {
 
 let navi = {
     home: ['home','/index.html'],
-    about: ['about','/about.html'],
-    archive: ['archive','/archive.html']
+    about: ['examples','examples/index.html'],
+    archive: ['tutorial','/tutorial.html']
 }
 
 // --------------------------- # # # # #
