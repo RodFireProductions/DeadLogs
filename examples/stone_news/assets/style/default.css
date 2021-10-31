@@ -14,6 +14,7 @@
 
 :root {
     --accent-color  : purple;
+    --font-size     : 1em;
 
     --text-color    : #000; /* Main text color */
     --back-image    : url('../images/stones.jpg'); /* Body background image */
@@ -47,6 +48,7 @@ html { scrollbar-color: #eee #222; }
 body {
     background: var(--back-overlay), var(--back-image), black;
     background-size: cover;
+    font-size: var(--font-size);
 }
 
 p { text-indent: var(--text-indent); }
@@ -104,6 +106,7 @@ hr {
     line-height: 1.3em;
     margin: 10px auto;
     text-align: center;
+    padding: 10px;
 }
 #archivePage a, #recentPosts a {
     color: var(--text-color);
@@ -160,9 +163,15 @@ footer {
 
 .indexcontent {
     min-height: 20px;
+    margin: 10px;
+    margin-bottom: 20px;
 }
 
 .aboutcontent {
+    min-height: 20px;
+}
+
+.archive {
     min-height: 20px;
 }
 
@@ -172,45 +181,3 @@ footer {
     padding: 10px;
     /*border-style: dotted;*/
 }
-
-/*
-.aboutcontent {
-    min-height: 20px;
-    grid-column: 1 / span 1;
-    grid-row: 1 / span 1 ;
-}
-
-#aboutColumn {
-    margin: 10px auto;
-    grid-column: 2 / span 1;
-    grid-row: 1 / span 1 ;
-    text-align: center;
-}
-
-.aboutcols {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr;
-
-    column-gap: 20px;
-    row-gap: 0px;
-}
-
-@media screen and (max-width: 750px) {
-    .aboutcols {
-        grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr;
-
-        column-gap: 0px;
-        row-gap: 20px;
-    },
-    .aboutcontent {
-        grid-column: 1 / span 1;
-        grid-row: 2 / span 1 ;
-    },
-    #aboutColumn {
-        grid-column: 1 / span 1;
-        grid-row: 1 / span 1 ;
-    }
-}
-*/

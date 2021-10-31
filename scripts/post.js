@@ -59,7 +59,7 @@ navv.innerHTML += '<a href="' + path + navi.about[1] +'">' + navi.about[0] + '</
 navv.innerHTML += '<a href="' + path + navi.archive[1] +'">' + navi.archive[0] + '</a>';
 
 // Footer
-let foot = '<div> Built using <a target="_blank" href="http://deadjournals.deadinsideartist.art/">DeadJournals</a> <br>&#169; Copyright ' + year.getFullYear() + ' ' + author.name + ' - All Rights Reserved</div>';
+let foot = '<div> Built using <a target="_blank" href="https://deadjournals.deadinsideartist.art/">DeadJournals</a> <br>&#169; Copyright ' + year.getFullYear() + ' ' + author.name + ' - All Rights Reserved</div>';
 document.getElementById('footer').innerHTML = foot;
 
 // Post navigation
@@ -128,5 +128,29 @@ if (aboutAuthor != null) {
         aboutt('</div>')
     } if ( author.line != null) {
         aboutt('<div style="color: var(--accent-color); margin-top: 5px;">'+ author.line +'</div>');
+    }
+}
+
+// Examples page
+let examples = document.getElementById('examplesPage');
+function exampless(x){
+    examples.innerHTML += x;
+}
+function hate(x){
+    let dog = "";
+    if (x === 'Stone News') {
+        let p;
+        dog += '<div class="expics">';
+        for (p = 0; p < 3; p++) {
+            dog += '<img src="'+ examplesPictures.stone[p] +'" class="expicss">';
+        }
+        dog += '</div>';
+    }
+    return dog
+}
+if (examples != null) {
+    let t;
+    for (t = 0; t < examplesArchive.length; t++) {
+        exampless('<div class="examples"><a target="_blank" href="'+ examplesArchive[t] +'">' + examplesNames[t] + ' (live demo)</a><br>'+ examplesDescription[t] + hate(examplesNames[t]) +'</div>');
     }
 }

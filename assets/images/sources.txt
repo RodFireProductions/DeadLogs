@@ -1,3 +1,3 @@
 Background image: Image by <a href="https://pixabay.com/users/stux-12364/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=116973">Thanks for your Like • donations welcome</a> from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=116973">Pixabay</a>
-Overlay image:
-Favicon:
+Overlay image: None
+Favicon: Rodrick

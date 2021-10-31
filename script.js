@@ -15,6 +15,8 @@
 
 let siteName = "DeadJournals";
 let lang = "en"; // The language of your site. Example, en = english, fr = français (french), etc.
+let siteUrl = "https://deadjournals.deadinsideartist.art"; // You can just put the url of your site here, whether that be a subdomain or custom
+
 
 // Feel free to leave one of these values as 'null' if you don't wish to use them.
 let socials = {
@@ -64,5 +66,22 @@ let postArchiveNames = [
 let postArchiveDates = [
     //"25 Oct 2021"
 ];
+
+let examplesArchive = [
+    "./examples/stone_news/index.html",
+    "./examples/ponymania/index.html"
+];
+let examplesNames = [
+    "Stone News",
+    "PonyMania"
+];
+let examplesDescription = [
+    "An old timey, stoney newspaper! What will you journal on? What stories will you share?",
+    "Ponies are your only friend now."
+];
+let examplesPictures = {
+    stone: ["./assets/images/post/stone_1.png", "./assets/images/post/stone_2.png", "./assets/images/post/stone_3.png"]
+}
+
 
 // --------------------------- # # # # #

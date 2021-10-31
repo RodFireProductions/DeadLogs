@@ -1,3 +1,4 @@
 Shroom town
 Tomagachi
-Pink and bubbly
+Bubbly (allow for different color options: pink, blue, orange, green, purple)
+Computer

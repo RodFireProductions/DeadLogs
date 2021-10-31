@@ -2,44 +2,46 @@
     Rodrick hates their life.
 --------------------------- # # # # #
 
-    This is the DeadJournals's site theme!
+    This is the default theme: Stone News!
 
     Feel free to edit the variables under `:root`
     to your liking.
 */
 
 /* The fonts used for this theme. Feel free to change theme. */
-@import url('https://fonts.googleapis.com/css2?family=IM+Fell+English&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Playball&display=swap');
+@font-face {
+    font-family: 'Heartz', sans-serif;
+    src: url(../fonts/HeartzRegular.ttf) format('ttf');
+}
 
 :root {
-    --accent-color  : black;
+    --accent-color  : purple;
+    --font-size     : 1em;
 
-    --text-color    : #222; /* Main text color */
-    --back-image    : url('../images/mushrooms.jpg'); /* Body background image */
-    --back-overlay  : url('../images/dot.png'); /* Background image overlay image.
+    --text-color    : #FF2D60; /* Main text color: #FF7464*/
+    --back-image    : url('../images/stones.jpg'); /* Body background image */
+    --back-overlay  : url('../images/dots.png'); /* Background image overlay image.
         If you want there to be no overlay, then set this image to '../images/trans.png'.
     */
-    --back-color    : #ffffff99; /* Background color of main area */
-    --color-back    : #ffffff66; /* #decfe9 */
+    --back-color    : linear-gradient(180deg, #FFDEFF 0%, #FFF1FF 50%, #FFDEFF 100%);; /* Background color of main area */
 
-    --nav-color     : #32174d00; /* Navigation background color */
-    --nav-txt-color : #decfe9; /* Navigation text color */
-    --nav-btn-color : #2f1f39;
+    --nav-txt-color : #222; /* Navigation text color */
 
-    --border-color  : #222; /* Color of border */
+    --arch-color    : #FFE2CE; /* Back color for the archive sections */
+
+    --border-color  : white; /* Color of border */
     --border-style  : none; /* The style of the border */
     --border-width  : 10px; /* The border's width */
 
-    --font-main     : 'IM Fell English', serif; /* The font used for almost everything */
-    --font-title    : 'Playball', serif; /* The font used for page titles */
+    --font-main     : cursive, sans-serif; /* The font used for almost everything */
+    --font-title    : 'Heartz', cursive; /* The font used for page titles */
     --text-indent   : 2em; /* The width of paragraph indents. Just put `0px` if you don't want any. */
 }
 
 html { scrollbar-color: #eee #222; }
 
-::selection { background: #000; color: #bbb; }
-::-moz-selection { background: #000; color: #bbb; }
+::selection { background: #222222; color: #bbb; }
+::-moz-selection { background: #222222; color: #bbb; }
 
 ::-webkit-scrollbar-track { background-color: #222; }
 ::-webkit-scrollbar-thumb { background-color: #eee; }
@@ -49,13 +51,14 @@ html { scrollbar-color: #eee #222; }
 body {
     background: var(--back-overlay), var(--back-image), black;
     background-size: cover;
+    font-size: var(--font-size);
 }
 
 p { text-indent: var(--text-indent); }
 
 a { color: var(--accent-color); }
 a:hover {
-    color: yellow;
+    color: var(--text-color);
     text-decoration: line-through;
 }
 
@@ -64,13 +67,10 @@ hr {
     border-bottom: none;
     border-left: none;
     border-right: none;
-    border-width: medium;
-
-    color: var(--color-back);
+    border-width: thick;
 }
 
 #nav {
-    background-color: var(--nav-color);
     color: var(--nav-txt-color);
 
     display: grid;
@@ -80,16 +80,11 @@ hr {
 
 #nav a {
     text-align: center;
+    color: var(--nav-txt-color);
     text-decoration: none;
-    border-radius: 50px;
-    padding: 5px;
-    /*font-family: cursive, sans-serif;*/
-    background-color: var(--nav-txt-color);
-    color: var(--nav-btn-color);
 }
 #nav a:hover {
-    background-color: var(--nav-btn-color);
-    color: var(--nav-txt-color);
+    text-decoration: underline;
 }
 
 #changePost {
@@ -113,6 +108,7 @@ hr {
     line-height: 1.3em;
     margin: 10px auto;
     text-align: center;
+    padding: 10px;
 }
 #archivePage a, #recentPosts a {
     color: var(--text-color);
@@ -125,21 +121,13 @@ hr {
 
 footer {
     text-align: center;
-    font-size: 1em;
-    opacity: 1;
+    font-size: .8em;
+    opacity: .8;
     margin: 5px;
-    color: var(--text-color);
-    /*
-    text-shadow:
-		-1px -1px 0 #ddd,
-		1px -1px 0 #ddd,
-		-1px 1px 0 #ddd,
-		1px 1px 0 #ddd;
-        */
 }
 
 .main_content {
-    background-color: var(--back-color);
+    background: var(--back-color);
     color: var(--text-color);
     border-color: var(--border-color);
     border-style: var(--border-style);
@@ -150,24 +138,17 @@ footer {
     min-height: 100px;
     margin: 25px auto;
 
-    border-radius: 50px;
+    padding: 30px;
 
-    padding: 10px;
+    border-radius: 100px;
 }
 
 #postTitle, #blogTitle {
     font-family: var(--font-title);
     font-size: 3em;
-    letter-spacing: 0px;
+    letter-spacing: 5px;
 
     line-height: 1.1;
-    /*
-    text-shadow:
-		-1px -1px 0 #000,
-		1px -1px 0 #000,
-		2px 2px 0 #000,
-		1px 1px 0 #000;
-        */
 }
 
 .heading {
@@ -176,48 +157,37 @@ footer {
 }
 
 .postcontent {
-    /*
     border-style: dotted;
-    background-color: var(--color-back);
-    */
-    font-size: 1.2em;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
     min-height: 20px;
-    color: #222;
-
-    background-color: var(--color-back);
-
-    padding: 20px;
-
-    border-radius: 100px;
-    /*
-    text-shadow:
-		-1px -1px 0 #000,
-		1px -1px 0 #000,
-		-1px 1px 0 #000,
-		1px 1px 0 #000;
-        */
 }
 
-#examplesPage {
-    display: grid;
-    grid-auto-flow: row;
-    grid-row-gap: 20px;
-}
-
-.examples {
-    margin: 5px auto;
-    width: 90%;
-}
-
-.expics {
-    display: grid;
-    grid-auto-flow: column;
-    grid-column-gap: 5px;
-    overflow: auto;
-    width: 100%;
+.indexcontent {
+    min-height: 20px;
     margin: 10px;
+    margin-bottom: 20px;
 }
 
-.expicss {
-    width: 100%;
+.aboutcontent {
+    min-height: 20px;
+}
+
+.archive {
+    min-height: 20px;
+}
+
+#aboutColumn {
+    margin: 10px auto;
+    text-align: center;
+    padding: 10px;
+    /*border-style: dotted;*/
+}
+
+#recentPosts, #archivePage {
+    background-color: var(--arch-color);
+    border-radius: 50px;
+    padding: 1em;
 }

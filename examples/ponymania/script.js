@@ -13,9 +13,9 @@
 
 //=// --- Basic Configs --- //=// [1]
 
-let siteName = "Stone News";
+let siteName = "PonyMania";
 let lang = "en"; // The language of your site. Example, en = english, fr = français (french), etc.
-let siteUrl = "https://deadjournals.deadinsideartist.art/examples/stone_news/index.html"; // You can just put the url of your site here, whether that be a subdomain or custom
+let siteUrl = "https://deadjournals.deadinsideartist.art/examples/ponymania/index.html"; // You can just put the url of your site here, whether that be a subdomain or custom
 
 // Feel free to leave one of these values as 'null' if you don't wish to use them.
 let socials = {
@@ -28,11 +28,11 @@ let socials = {
 
 // Feel free to leave one of these values as 'null' if you don't wish to use them.
 let author = {
-    name: "Marrow Gradient",
-    title: 'A rock on the web', // A job title or personal title, what ever defines you <3
+    name: "Prancer Lilac",
+    title: 'A pony on the web', // A job title or personal title, what ever defines you <3
     picture: "./assets/images/author.png", // This is the url of the author picture, can be local or a link. Square or almost square is recommended
     pronouns: 'fae/faer', // Examples: he/him, she/her, they/them, ze/zir, etc. Resource: https://en.pronouns.page/
-    extra: ['aroace','donut stone', 'mixed'], // Your orientation, ethinicty, etc? If none, then set this to `null`
+    extra: ['aroace','pretty pony', 'mixed'], // Your orientation, ethinicty, etc? If none, then set this to `null`
 
     line: "Mushrooms are cute!" // A quote? A goofy phrase? Your own personal motto? Be creative!
 }
