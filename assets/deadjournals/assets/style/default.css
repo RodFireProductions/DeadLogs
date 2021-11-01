@@ -9,32 +9,29 @@
 */
 
 /* The fonts used for this theme. Feel free to change theme. */
-@font-face {
-    font-family: 'Heartz', sans-serif;
-    src: url(../fonts/HeartzRegular.ttf) format('ttf');
-}
+@import url('https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Barcode+39+Text&display=swap');
 
 :root {
     --accent-color  : purple;
     --font-size     : 1em;
 
-    --text-color    : #FF2D60; /* Main text color: #FF7464*/
+    --text-color    : #000; /* Main text color */
     --back-image    : url('../images/stones.jpg'); /* Body background image */
     --back-overlay  : url('../images/dots.png'); /* Background image overlay image.
         If you want there to be no overlay, then set this image to '../images/trans.png'.
     */
-    --back-color    : linear-gradient(180deg, #FFDEFF 0%, #FFF1FF 50%, #FFDEFF 100%);; /* Background color of main area */
+    --back-color    : #eee; /* Background color of main area */
 
-    --nav-txt-color : #222; /* Navigation text color */
+    --nav-color     : #222; /* Navigation background color */
+    --nav-txt-color : #eee; /* Navigation text color */
 
-    --arch-color    : #FFE2CE; /* Back color for the archive sections */
-
-    --border-color  : white; /* Color of border */
-    --border-style  : none; /* The style of the border */
+    --border-color  : #222; /* Color of border */
+    --border-style  : double; /* The style of the border */
     --border-width  : 10px; /* The border's width */
 
-    --font-main     : cursive, sans-serif; /* The font used for almost everything */
-    --font-title    : 'Heartz', cursive; /* The font used for page titles */
+    --font-main     : 'Syne Mono', monospace; /* The font used for almost everything */
+    --font-title    : 'Libre Barcode 39 Text', serif; /* The font used for page titles */
     --text-indent   : 2em; /* The width of paragraph indents. Just put `0px` if you don't want any. */
 }
 
@@ -67,10 +64,11 @@ hr {
     border-bottom: none;
     border-left: none;
     border-right: none;
-    border-width: thick;
+    border-width: medium;
 }
 
 #nav {
+    background-color: var(--nav-color);
     color: var(--nav-txt-color);
 
     display: grid;
@@ -127,7 +125,7 @@ footer {
 }
 
 .main_content {
-    background: var(--back-color);
+    background-color: var(--back-color);
     color: var(--text-color);
     border-color: var(--border-color);
     border-style: var(--border-style);
@@ -138,9 +136,7 @@ footer {
     min-height: 100px;
     margin: 25px auto;
 
-    padding: 30px;
-
-    border-radius: 100px;
+    padding: 10px;
 }
 
 #postTitle, #blogTitle {
@@ -184,10 +180,4 @@ footer {
     text-align: center;
     padding: 10px;
     /*border-style: dotted;*/
-}
-
-#recentPosts, #archivePage {
-    background-color: var(--arch-color);
-    border-radius: 50px;
-    padding: 1em;
 }

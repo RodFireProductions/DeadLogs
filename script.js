@@ -58,29 +58,30 @@ let navi = {
     together and in chronological order.
 */
 let postArchive = [
-    //"post/oct_25_2021_example.html"
+    "./post/template.html"
 ];
 let postArchiveNames = [
-    //"Example Polar Post"
+    "template"
 ];
 let postArchiveDates = [
     //"25 Oct 2021"
 ];
 
 let examplesArchive = [
-    "./examples/stone_news/index.html",
-    "./examples/ponymania/index.html"
+    "./examples/stone_news/index.html"
 ];
 let examplesNames = [
-    "Stone News",
-    "PonyMania"
+    "Stone News"
 ];
 let examplesDescription = [
-    "An old timey, stoney newspaper! What will you journal on? What stories will you share?",
-    "Ponies are your only friend now."
+    "An old timey, stoney newspaper! What will you journal on? What stories will you share?"
 ];
 let examplesPictures = {
     stone: ["./assets/images/post/stone_1.png", "./assets/images/post/stone_2.png", "./assets/images/post/stone_3.png"]
+}
+
+let examplesGihub = {
+    stone: ["https://github.com/RodFireProductions/DeadJournals/tree/main/examples/stone_news"]
 }
 
 

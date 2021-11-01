@@ -15,17 +15,17 @@
 :root {
     --accent-color  : black;
 
-    --text-color    : #222; /* Main text color */
+    --text-color    : #000; /* Main text color */
     --back-image    : url('../images/mushrooms.jpg'); /* Body background image */
     --back-overlay  : url('../images/dot.png'); /* Background image overlay image.
         If you want there to be no overlay, then set this image to '../images/trans.png'.
     */
-    --back-color    : #ffffff99; /* Background color of main area */
-    --color-back    : #ffffff66; /* #decfe9 */
+    --back-color    : #ffffff; /* Background color of main area */
+    --color-back    : #000; /* #decfe9 */
 
     --nav-color     : #32174d00; /* Navigation background color */
-    --nav-txt-color : #decfe9; /* Navigation text color */
-    --nav-btn-color : #2f1f39;
+    --nav-txt-color : yellow; /* Navigation text color */
+    --nav-btn-color : #000;
 
     --border-color  : #222; /* Color of border */
     --border-style  : none; /* The style of the border */
@@ -51,7 +51,7 @@ body {
     background-size: cover;
 }
 
-p { text-indent: var(--text-indent); }
+/*p { text-indent: var(--text-indent); }*/
 
 a { color: var(--accent-color); }
 a:hover {
@@ -69,6 +69,12 @@ hr {
     color: var(--color-back);
 }
 
+code {
+    background-color: black;
+    padding: 5px;
+    color: yellow;
+}
+
 #nav {
     background-color: var(--nav-color);
     color: var(--nav-txt-color);
@@ -79,16 +85,17 @@ hr {
 }
 
 #nav a {
+    font-size: 1.2em;
+    padding: 10px;
     text-align: center;
     text-decoration: none;
     border-radius: 50px;
-    padding: 5px;
     /*font-family: cursive, sans-serif;*/
-    background-color: var(--nav-txt-color);
+    background-color: #00000000;
     color: var(--nav-btn-color);
 }
 #nav a:hover {
-    background-color: var(--nav-btn-color);
+    background-color: #00000000;
     color: var(--nav-txt-color);
 }
 
@@ -115,11 +122,11 @@ hr {
     text-align: center;
 }
 #archivePage a, #recentPosts a {
-    color: var(--text-color);
+    color: #ccc;
     text-decoration: underline;
 }
 #archivePage a:hover, #recentPosts a:hover {
-    color: var(--accent-color);
+    color: yellow;
     text-decoration: line-through;
 }
 
@@ -161,18 +168,18 @@ footer {
     letter-spacing: 0px;
 
     line-height: 1.1;
-    /*
+
     text-shadow:
-		-1px -1px 0 #000,
-		1px -1px 0 #000,
-		2px 2px 0 #000,
-		1px 1px 0 #000;
-        */
+		-1px -1px 0 yellow,
+		1px -1px 0 yellow,
+		2px 2px 0 yellow,
+		1px 1px 0 yellow;
+
 }
 
 .heading {
     text-align: center;
-    line-height: .2;
+    height: 3em;
 }
 
 .postcontent {
@@ -182,13 +189,12 @@ footer {
     */
     font-size: 1.2em;
     min-height: 20px;
-    color: #222;
+    color: #fff;
 
-    background-color: var(--color-back);
+    background-color: #000000ee;
 
     padding: 20px;
 
-    border-radius: 100px;
     /*
     text-shadow:
 		-1px -1px 0 #000,
@@ -197,6 +203,12 @@ footer {
 		1px 1px 0 #000;
         */
 }
+
+.postcontent a {
+    color: #ccc;
+}
+.postcontent a:hover { color: yellow; }
+.postcontent h3 { color: #ccc; }
 
 #examplesPage {
     display: grid;

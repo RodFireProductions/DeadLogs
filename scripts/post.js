@@ -151,6 +151,6 @@ function hate(x){
 if (examples != null) {
     let t;
     for (t = 0; t < examplesArchive.length; t++) {
-        exampless('<div class="examples"><a target="_blank" href="'+ examplesArchive[t] +'">' + examplesNames[t] + ' (live demo)</a><br>'+ examplesDescription[t] + hate(examplesNames[t]) +'</div>');
+        exampless('<div class="examples"><a target="_blank" href="'+ examplesArchive[t] +'">' + examplesNames[t] + ' (live demo)</a> | <a target="_blank" href="'+ examplesGihub.stone +'">GitHub</a><br>'+ examplesDescription[t] + hate(examplesNames[t]) +'</div>');
     }
 }
