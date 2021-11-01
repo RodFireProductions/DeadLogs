@@ -82,8 +82,14 @@ if (recent != null) {
     d = postArchiveNames.reverse()
     recent.innerHTML += '<div>Recent posts</div>';
     let r;
-    for (r = 0; r < 3; r++) {
-        recent.innerHTML += '<a class="changePost" href="'+ path + "/" + a[r] +'">'+ s[r]+ " -- " +d[r] +'</a><br>';
+    if (a.length >= 3) {
+        for (r = 0; r < 3; r++) {
+            recent.innerHTML += '<a class="changePost" href="'+ path + "/" + a[r] +'">'+ s[r]+ " -- " +d[r] +'</a><br>';
+        }
+    } else {
+        for (r = 0; r < a.length; r++) {
+            recent.innerHTML += '<a class="changePost" href="'+ path + "/" + a[r] +'">'+ s[r]+ " -- " +d[r] +'</a><br>';
+        }
     }
     recent.innerHTML += '<a class="changePost" href="'+ path + "/" + navi.archive[1] +'">'+ " See all "+'</a><br>';
 }

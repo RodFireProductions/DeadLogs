@@ -30,7 +30,7 @@ let socials = {
 let author = {
     name: 'Your Name',
     title: 'A human on the internet', // A job title or personal title, what ever defines you <3
-    picture: './assets/images/author.png', // This is the url of the author picture, can be local or a link. Square or almost square is recommended
+    picture: null, // This is the url of the author picture, can be local or a link. Square or almost square is recommended
     pronouns: null, // Examples: he/him, she/her, they/them, ze/zir, etc. Resource: https://en.pronouns.page/
     extra: ['human'], // Your orientation, ethinicty, etc? If none, then set this to `null`
 
