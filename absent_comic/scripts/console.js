@@ -12,44 +12,30 @@
 */
 
 // Feel free to change the default settings! ♡
-credit({
+let credit = {
 	emoji: "○",
 	name: siteName,
     author: author.name,
 	description: [
-        "I see you're looking under the hood of my site.",
-        "Caught ya redhanded, didn't I?",
         "--------------------------------",
         "✨Trans Rights has been and will always be Human Rights!✨",
         "♡ POC lives will always matter! ♡",
 		"Created using DeadJournals by Rodrick 'RodFireProductions'"
     ]
-});
-
-// Thank you Elliot Herriman for making th cool credit code. Very nice. Very nice.
-
-function throwIntoVoid(func, ...parameters) {
-	setTimeout(func.bind(console, ...parameters));
 }
 
-function credit(credits) {
-	if (credits && credits.name) {
-		throwIntoVoid(console.groupCollapsed, (credits.emoji ? credits.emoji + " " : "") + credits.name + (credits.author ? " %cby " + credits.author: "%c") + (credits.emoji ? " " + credits.emoji : ""), "color: grey");
+// I wouldn't recommend touching this!
 
-		if (credits.description) {
-			if (typeof credits.description === "string") {
-				print(credits.description);
-			} else {
-				credits.description.forEach((line) => print(line));
-			}
-		}
+if (credit != null){
+	console.group("Lookin' under the hood?")
+	console.log(
+		credit.emoji+" %c"+ credit.name + " is by and belongs to " + author.name +" "+credit.emoji, "font-style: italic;"
+	)
+	let z;
+    for (z = 0; z < credit.description.length; z++) {
+		console.log(credit.description[z])
     }
 
-	function print(line) {
-		if (typeof line == "string") {
-			throwIntoVoid(console.log, line);
-		} else if (line.length) {
-			throwIntoVoid(console.log.apply, line);
-		}
-    }
+
+	console.groupEnd()
 }

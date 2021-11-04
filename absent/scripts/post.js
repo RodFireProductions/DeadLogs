@@ -22,41 +22,46 @@ if (url.includes('post/')) {
 let index = -1;
 let i;
 for (i = 0; i < postArchive.length; i++) {
-  if ( postArchive[i] === postlocation ) {
+  if ( postArchive[i][2] === postlocation ) {
     index = i;
   }
 }
 
 let previous = postArchive[index-1];
 let next = postArchive[index+1];
+let currentLocation = postArchive[index];
+
+console.log(currentLocation)
 
 // ---- Injection ---- ///
 
 // Html titles
 pageTitle = document.getElementById('postTitle');
-indexTitle = document.getElementById('blogTitle');
 if (pageTitle === null) {
     document.title = siteName;
+} else if (pageTitle.innerHTML === "") {
+    document.title = currentLocation[0];
+    pageTitle.innerHTML = currentLocation[0];
 } else {
     document.title = pageTitle.innerHTML;
 };
 
-if (indexTitle != null) {
-    if (indexTitle.innerHTML === "") {
-        indexTitle.innerHTML = siteName;
-    } else {
-        document.title = indexTitle.innerHTML;
-    };
-}
 
 // HTML lang attribute
 document.documentElement.setAttribute("lang", lang);
 
+// Post dates
+let postDate = document.getElementById('postDate');
+if ( postDate != null) {
+    postDate.innerHTML = currentLocation[1];
+}
+
 // Site navigation
 let navv = document.getElementById('nav');
-navv.innerHTML += '<a href="' + path + navi.home[1] +'">' + navi.home[0] + '</a>';
-navv.innerHTML += '<a href="' + path + navi.about[1] +'">' + navi.about[0] + '</a>';
-navv.innerHTML += '<a href="' + path + navi.archive[1] +'">' + navi.archive[0] + '</a>';
+let d;
+for (d = 0; d < navi.length; d++) {
+    navv.innerHTML += '<a href="' + path + navi[d][1] +'">' + navi[d][0] + '</a>';
+}
 
 // Footer
 let foot = '<div> Built using <a target="_blank" href="https://deadjournals.deadinsideartist.art//">DeadJournals</a> <br>&#169; Copyright ' + year.getFullYear() + ' ' + author.name + ' - All Rights Reserved</div>';
@@ -66,11 +71,11 @@ document.getElementById('footer').innerHTML = foot;
 let postNav = document.getElementById('changePost');
 if (postNav != null) {
     if ( previous != null ) {
-        postNav.innerHTML += '<a class="changePost" href="../' + previous +'">previous</a>';
+        postNav.innerHTML += '<a class="changePost" href="../' + previous[2] +'">previous</a>';
     } else { postNav.innerHTML += "<div></div>" }
-    postNav.innerHTML += '<a class="changePost" href="' + path + navi.archive[1] +'">' + navi.archive[0] + '</a>';
+    postNav.innerHTML += '<a class="changePost" href="' + path + navi[2][1] +'">' + navi[2][0] + '</a>';
     if ( next != null ) {
-        postNav.innerHTML += '<a class="changePost" href="../' + next +'">next</a>';
+        postNav.innerHTML += '<a class="changePost" href="../' + next[2] +'">next</a>';
     } else { postNav.innerHTML += "<div></div>"  }
 }
 
@@ -78,20 +83,18 @@ if (postNav != null) {
 let recent = document.getElementById('recentPosts');
 if (recent != null) {
     a = postArchive.reverse()
-    s = postArchiveDates.reverse()
-    d = postArchiveNames.reverse()
     recent.innerHTML += '<div>Recent posts</div>';
     let r;
     if (a.length >= 3) {
         for (r = 0; r < 3; r++) {
-            recent.innerHTML += '<a class="changePost" href="'+ path + "/" + a[r] +'">'+ s[r]+ " -- " +d[r] +'</a><br>';
+            recent.innerHTML += '<a class="changePost" href="'+ path + "/" + a[r][2] +'">'+ a[r][1]+ " -- " +a[r][0] +'</a><br>';
         }
     } else {
         for (r = 0; r < a.length; r++) {
-            recent.innerHTML += '<a class="changePost" href="'+ path + "/" + a[r] +'">'+ s[r]+ " -- " +d[r] +'</a><br>';
+            recent.innerHTML += '<a class="changePost" href="'+ path + "/" + a[r][2] +'">'+ a[r][1]+ " -- " +a[r][0] +'</a><br>';
         }
     }
-    recent.innerHTML += '<a class="changePost" href="'+ path + "/" + navi.archive[1] +'">'+ " See all "+'</a><br>';
+    recent.innerHTML += '<a class="changePost" href="'+ path + "/" + navi[2][1] +'">'+ " See all "+'</a><br>';
 }
 
 
@@ -99,11 +102,9 @@ if (recent != null) {
 let archiveList = document.getElementById('archivePage');
 if (archiveList != null) {
     a = postArchive.reverse()
-    s = postArchiveDates.reverse()
-    d = postArchiveNames.reverse()
     let w;
     for (w = 0; w < a.length; w++) {
-      archiveList.innerHTML += '<a class="changePost" href="'+ path + "/" + a[w] +'">'+ s[w]+ " -- " +d[w] +'</a><br>';
+      archiveList.innerHTML += '<a class="changePost" href="'+ path + "/" + a[w][2] +'">'+ a[w][1]+ " -- " +a[w][0] +'</a><br>';
     }
 }
 
@@ -134,21 +135,16 @@ if (aboutAuthor != null) {
         aboutt('</div>');
     } if ( socials != null) {
         aboutt('<div>');
-            if (socials.one != null) {
-                aboutt('<a href="'+ socials.one[1] +'">'+ socials.one[0] +'</a>');
-            } if (socials.two != null) {
-                aboutt(' | <a href="'+ socials.two[1] +'">'+ socials.two[0] +'</a>');
-            } if (socials.three != null) {
-                aboutt(' | <a href="'+ socials.three[1] +'">'+ socials.three[0] +'</a>');
+            let g;
+            for (g = 0; g < navi.length; g++) {
+                if (g === 0) {
+                    aboutt('<a href="'+ socials[g][1] +'">'+ socials[g][0] +'</a>');
+                } else {
+                    aboutt(' | <a href="'+ socials[g][1] +'">'+ socials[g][0] +'</a>');
+                }
             }
         aboutt('</div>');
     } if ( author.line != null) {
         aboutt('<div style="color: var(--accent-color); margin-top: 5px;">'+ author.line +'</div>');
     }
-}
-
-// Post dates
-let postDate = document.getElementById('postDate');
-if ( postDate != null) {
-    postDate.innerHTML = postArchiveDates[index];
 }
