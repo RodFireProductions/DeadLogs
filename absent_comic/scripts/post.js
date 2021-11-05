@@ -11,9 +11,9 @@
 let url = window.location.pathname;
 const year = new Date();
 
-let postlocation = url.substring(url.lastIndexOf('post/'));
+let postlocation = url.substring(url.lastIndexOf('page/'));
 let path = ".";
-if (url.includes('post/')) {
+if (url.includes('page/')) {
     path = '..';
 }
 
@@ -31,11 +31,10 @@ let previous = postArchive[index-1];
 let next = postArchive[index+1];
 let currentLocation = postArchive[index];
 
-console.log(currentLocation)
-
 // ---- Injection ---- ///
 
 // Html titles
+/*
 pageTitle = document.getElementById('postTitle');
 if (pageTitle === null) {
     document.title = siteName;
@@ -45,16 +44,18 @@ if (pageTitle === null) {
 } else {
     document.title = pageTitle.innerHTML;
 };
-
+*/
 
 // HTML lang attribute
 document.documentElement.setAttribute("lang", lang);
 
 // Post dates
+/*
 let postDate = document.getElementById('postDate');
 if ( postDate != null) {
     postDate.innerHTML = currentLocation[1];
 }
+*/
 
 // Site navigation
 let navv = document.getElementById('nav');

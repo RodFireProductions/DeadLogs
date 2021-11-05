@@ -61,7 +61,7 @@ let postArchive = [
 ]
 
 let meetChalice = [
-    ['Cover', '/assets/images/meet_chalice/FRONT.png', "October 1, 2021"],
+    ['cover', '/assets/images/meet_chalice/FRONT.png', "October 1, 2021"],
     ['1', '/assets/images/meet_chalice/INNERFRONT.png', "October 1, 2021"],
     ['2', '/assets/images/meet_chalice/1.png', "October 1, 2021"],
     ['3', '/assets/images/meet_chalice/2.png', "October 1, 2021"],
@@ -72,7 +72,7 @@ let meetChalice = [
 ]
 
 let hurt = [
-    ['Cover', '/assets/images/hurt/FRONT.png', "October 8, 2021"],
+    ['cover', '/assets/images/hurt/FRONT.png', "October 8, 2021"],
     ['1', '/assets/images/hurt/INNERFRONT.png', "October 8, 2021"],
     ['2', '/assets/images/hurt/1.png', "October 8, 2021"],
     ['3', '/assets/images/hurt/2.png', "October 8, 2021"],
@@ -88,11 +88,13 @@ let hurt = [
 
 let chapterArchive = [
     {
-        name: "|| ♡ || Meet Chalice || ♡ ||",
+        name: '|| ♡ || Meet Chalice || ♡ ||',
+        src: 'meet',
         pages: meetChalice,
     },
     {
-        name: "|| ✂️ || Hurt || ✂️ ||",
+        name: '|| ✂️ || Hurt || ✂️ ||',
+        src: 'hurt',
         pages: hurt,
     }
 ]
