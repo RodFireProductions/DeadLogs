@@ -90,21 +90,21 @@ let chapterArchive = [
     {
         name: '|| ♡ || Meet Chalice || ♡ ||',
         src: 'meet',
+        location: 'page/meet_chalice',
         pages: meetChalice,
+
+        chapter: 'Meet Chalice ♡',
+        page: 'page'
     },
     {
         name: '|| ✂️ || Hurt || ✂️ ||',
         src: 'hurt',
+        location: 'page',
         pages: hurt,
+
+        chapter: 'Hurt ✂️',
+        page: 'page'
     }
 ]
-
-/* Test
-console.log(meetChalice);
-console.log(meetChalice[5][1]);
-console.log(chapterArchive);
-console.log(chapterArchive[1]);
-console.log(chapterArchive[1].pages[7][2]);
-*/
 
 // --------------------------- # # # # #

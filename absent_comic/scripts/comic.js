@@ -8,7 +8,7 @@
 
 */
 
-// Comic pages / images
+// ---- Comic pages / images ---- ///
 
 let comicImage = document.getElementById('images');
 
@@ -29,25 +29,121 @@ if (comicImage != null) {
     w = url.substring(i+1);
     w = w.substring(0, w.length - 5);
 
-    console.log(p)
-}
+    let l;
+    for (l = 0; l < chapterArchive.length; l++) {
+        pages = chapterArchive[l].pages;
 
-let l;
-for (l = 0; l < chapterArchive.length; l++) {
-    pages = chapterArchive[l].pages;
+        let h;
+        for (h = 0; h < pages.length; h++) {
+            numb = pages[h][0].toLowerCase();
+            date = pages[h][2];
 
-    let h;
-    for (h = 0; h < pages.length; h++) {
-        numb = pages[h][0].toLowerCase();
-        date = pages[h][2];
+            if (numb.includes(w) && p === chapterArchive[l].src) {
+                if (chapterArchive[l].location != 'page') {
+                    comicImage.setAttribute('src', "../../"+pages[h][1]);
+                    path = '../..'
+                } else {
+                    comicImage.setAttribute('src', "../"+pages[h][1]);
+                    path = ".."
+                }
+            }
+        }
 
-        if (numb.includes(w) && p === chapterArchive[l].src) {
-            comicImage.setAttribute('src', "../"+pages[h][1]);
+        // ---- Header / Title ---- ///
+
+        if ( p === chapterArchive[l].src) {
+            document.title = chapterArchive[l].chapter +' '+ w
         }
     }
 }
 
-// Nagivation system (I'm gonna cry)
-//.push
+// ---- Page Navigation System ---- ///
 
-let ulimatePostArchive = [];
+let ultimatePostArchive = [];
+let j;
+for (j = 0; j < chapterArchive.length; j++) {
+    chap = chapterArchive[j].pages
+    let o;
+    for (o = 0; o < chap.length ; o++) {
+        dot = chapterArchive[j].location +'/'+ chapterArchive[j].src +'='+ chap[o][0] +".html";
+        ultimatePostArchive.push(dot)
+    }
+}
+
+    // Organization
+let index = -1;
+let i;
+for (i = 0; i < ultimatePostArchive.length; i++) {
+  if ( ultimatePostArchive[i] === postlocation ) {
+    index = i;
+  }
+}
+
+let previous = ultimatePostArchive[index-1];
+let next = ultimatePostArchive[index+1];
+let currentLocation = ultimatePostArchive[index];
+
+    // Injection
+let postNav = document.getElementById('changePost');
+if (postNav != null) {
+    if ( previous != null ) {
+        postNav.innerHTML += '<a class="changePost" href="' + path + '/' + previous +'">previous</a>';
+    } else { postNav.innerHTML += "<div></div>" }
+    postNav.innerHTML += '<a class="changePost" href="' + path + navi[2][1] +'">' + navi[2][0] + '</a>';
+    if ( next != null ) {
+        postNav.innerHTML += '<a class="changePost" href="' + path + '/' + next +'">next</a>';
+    } else { postNav.innerHTML += "<div></div>"  }
+}
+
+    // Event Listeners
+
+if (comicImage != null) {
+    comicImage.addEventListener('click', function() {
+        if (next != null) {
+            window.location = path + '/' + next;
+        }
+    })
+
+    document.documentElement.addEventListener("keydown", function(event) {
+
+    // Left
+    if (event.keyCode==37){
+        if (previous != null) {
+            window.location = path + '/' + previous;
+        }
+    }
+
+    // Right
+    if (event.keyCode==39){
+        if (next != null) {
+            window.location = path + '/' + next;
+        }
+    }
+});
+}
+
+// ---- Archive System ---- ///
+
+let archiveList = document.getElementById('archivePage');
+if (archiveList != null) {
+    let w;
+    for (w = 0; w < chapterArchive.length; w++) {
+        archiveList.innerHTML += '<h4>'+ chapterArchive[w].name +'</h4>';
+
+        let b;
+        for (b = 0; b < chapterArchive[w].pages.length; b++) {
+            archiveList.innerHTML += '<a href="'+ chapterArchive[w].location +'/'+ chapterArchive[w].src+ '=' +chapterArchive[w].pages[b][0] +'.html">'+ chapterArchive[w].pages[b][0] +' - '+ chapterArchive[w].pages[b][2] +'</a><br>';
+        }
+    }
+}
+
+// ---- Site Navigation ---- ///
+let navv = document.getElementById('nav');
+let d;
+for (d = 0; d < navi.length; d++) {
+    navv.innerHTML += '<a href="' + path + navi[d][1] +'">' + navi[d][0] + '</a>';
+}
+
+// ---- Footer ---- ///
+let foot = '<div> Built using <a target="_blank" href="https://deadjournals.deadinsideartist.art//">DeadJournals</a> <br>&#169; Copyright ' + year.getFullYear() + ' ' + author.name + ' - All Rights Reserved</div>';
+document.getElementById('footer').innerHTML = foot;

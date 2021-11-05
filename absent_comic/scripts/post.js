@@ -13,101 +13,13 @@ const year = new Date();
 
 let postlocation = url.substring(url.lastIndexOf('page/'));
 let path = ".";
-if (url.includes('page/')) {
-    path = '..';
-}
-
-// ---- Post organization ---- ///
-
-let index = -1;
-let i;
-for (i = 0; i < postArchive.length; i++) {
-  if ( postArchive[i][2] === postlocation ) {
-    index = i;
-  }
-}
-
-let previous = postArchive[index-1];
-let next = postArchive[index+1];
-let currentLocation = postArchive[index];
 
 // ---- Injection ---- ///
 
-// Html titles
-/*
-pageTitle = document.getElementById('postTitle');
-if (pageTitle === null) {
-    document.title = siteName;
-} else if (pageTitle.innerHTML === "") {
-    document.title = currentLocation[0];
-    pageTitle.innerHTML = currentLocation[0];
-} else {
-    document.title = pageTitle.innerHTML;
-};
-*/
 
 // HTML lang attribute
 document.documentElement.setAttribute("lang", lang);
 
-// Post dates
-/*
-let postDate = document.getElementById('postDate');
-if ( postDate != null) {
-    postDate.innerHTML = currentLocation[1];
-}
-*/
-
-// Site navigation
-let navv = document.getElementById('nav');
-let d;
-for (d = 0; d < navi.length; d++) {
-    navv.innerHTML += '<a href="' + path + navi[d][1] +'">' + navi[d][0] + '</a>';
-}
-
-// Footer
-let foot = '<div> Built using <a target="_blank" href="https://deadjournals.deadinsideartist.art//">DeadJournals</a> <br>&#169; Copyright ' + year.getFullYear() + ' ' + author.name + ' - All Rights Reserved</div>';
-document.getElementById('footer').innerHTML = foot;
-
-// Post navigation
-let postNav = document.getElementById('changePost');
-if (postNav != null) {
-    if ( previous != null ) {
-        postNav.innerHTML += '<a class="changePost" href="../' + previous[2] +'">previous</a>';
-    } else { postNav.innerHTML += "<div></div>" }
-    postNav.innerHTML += '<a class="changePost" href="' + path + navi[2][1] +'">' + navi[2][0] + '</a>';
-    if ( next != null ) {
-        postNav.innerHTML += '<a class="changePost" href="../' + next[2] +'">next</a>';
-    } else { postNav.innerHTML += "<div></div>"  }
-}
-
-// Recent posts
-let recent = document.getElementById('recentPosts');
-if (recent != null) {
-    a = postArchive.reverse()
-    recent.innerHTML += '<div>Recent posts</div>';
-    let r;
-    if (a.length >= 3) {
-        for (r = 0; r < 3; r++) {
-            recent.innerHTML += '<a class="changePost" href="'+ path + "/" + a[r][2] +'">'+ a[r][1]+ " -- " +a[r][0] +'</a><br>';
-        }
-    } else {
-        for (r = 0; r < a.length; r++) {
-            recent.innerHTML += '<a class="changePost" href="'+ path + "/" + a[r][2] +'">'+ a[r][1]+ " -- " +a[r][0] +'</a><br>';
-        }
-    }
-    recent.innerHTML += '<a class="changePost" href="'+ path + "/" + navi[2][1] +'">'+ " See all "+'</a><br>';
-}
-
-
-// Archive posts
-let archiveList = document.getElementById('archivePage');
-if (archiveList != null) {
-    a = postArchive.reverse()
-    let w;
-    for (w = 0; w < a.length; w++) {
-      archiveList.innerHTML += '<a class="changePost" href="'+ path + "/" + a[w][2] +'">'+ a[w][1]+ " -- " +a[w][0] +'</a><br>';
-    }
-}
 
 // About page
 let aboutAuthor = document.getElementById('aboutColumn');
