@@ -52,7 +52,12 @@ if (comicImage != null) {
         // ---- Header / Title ---- ///
 
         if ( p === chapterArchive[l].src) {
-            document.title = chapterArchive[l].chapter +' '+ w
+            document.title = chapterArchive[l].chapter +' '+ w;
+            if (w != "cover") {
+                document.getElementById('pageTitle').innerHTML = chapterArchive[l].chapter +' | ' + chapterArchive[l].page +' '+ w;
+            } else {
+                document.getElementById('pageTitle').innerHTML = chapterArchive[l].chapter +' | ' + w.charAt(0).toUpperCase() + w.slice(1);
+            }
         }
     }
 }

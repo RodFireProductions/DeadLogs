@@ -94,7 +94,7 @@ let chapterArchive = [
         pages: meetChalice,
 
         chapter: 'Meet Chalice ♡',
-        page: 'page'
+        page: 'Page'
     },
     {
         name: '|| ✂️ || Hurt || ✂️ ||',
@@ -103,7 +103,7 @@ let chapterArchive = [
         pages: hurt,
 
         chapter: 'Hurt ✂️',
-        page: 'page'
+        page: 'Page'
     }
 ]
 

@@ -44,6 +44,10 @@ body {
     padding-top: 10px;
 }
 
+#pageTitle {
+    text-align: center;
+    font-size: 2em;
+}
 
 p { text-indent: var(--text-indent); }
 
