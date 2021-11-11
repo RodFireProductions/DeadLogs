@@ -62,6 +62,13 @@ if (comicImage != null) {
     }
 }
 
+// ---- Site Navigation ---- ///
+let navv = document.getElementById('nav');
+let d;
+for (d = 0; d < navi.length; d++) {
+    navv.innerHTML += '<a href="' + path + navi[d][1] +'">' + navi[d][0] + '</a>';
+}
+
 // ---- Page Navigation System ---- ///
 
 let ultimatePostArchive = [];
@@ -101,30 +108,31 @@ if (postNav != null) {
 }
 
     // Event Listeners
-
 if (comicImage != null) {
-    comicImage.addEventListener('click', function() {
-        if (next != null) {
-            window.location = path + '/' + next;
-        }
-    })
-
-    document.documentElement.addEventListener("keydown", function(event) {
-
-    // Left
-    if (event.keyCode==37){
-        if (previous != null) {
-            window.location = path + '/' + previous;
-        }
+    if (clickPage === true) {
+        comicImage.addEventListener('click', function() {
+            if (next != null) {
+                window.location = path + '/' + next;
+            }
+        })
     }
 
-    // Right
-    if (event.keyCode==39){
-        if (next != null) {
-            window.location = path + '/' + next;
-        }
+    if (arrowKeys === true) {
+        document.documentElement.addEventListener("keydown", function(event) {
+            // Left
+            if (event.keyCode==37){
+                if (previous != null) {
+                    window.location = path + '/' + previous;
+                }
+            }
+            // Right
+            if (event.keyCode==39){
+                if (next != null) {
+                    window.location = path + '/' + next;
+                }
+            }
+        });
     }
-});
 }
 
 // ---- Archive System ---- ///
@@ -141,14 +149,3 @@ if (archiveList != null) {
         }
     }
 }
-
-// ---- Site Navigation ---- ///
-let navv = document.getElementById('nav');
-let d;
-for (d = 0; d < navi.length; d++) {
-    navv.innerHTML += '<a href="' + path + navi[d][1] +'">' + navi[d][0] + '</a>';
-}
-
-// ---- Footer ---- ///
-let foot = '<div> Built using <a target="_blank" href="https://deadjournals.deadinsideartist.art//">DeadJournals</a> <br>&#169; Copyright ' + year.getFullYear() + ' ' + author.name + ' - All Rights Reserved</div>';
-document.getElementById('footer').innerHTML = foot;

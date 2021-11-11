@@ -18,6 +18,11 @@ let siteName = "Comic Name";
 let lang = "en"; // The language of your site. Example, en = english, fr = français (french), etc.
 let siteUrl = ""; // You can just put the url of your site here, whether that be a subdomain or custom
 
+// Enable or disable certain page turning mechanics
+let clickPage = true; // Clicking page image will advance to the next page
+let arrowKeys = true; // Use <- and -> keys to go back and forth between pages
+
+
 // Feel free to leave one of these values as 'null' if you don't wish to use them.
 let socials = [
     // Set up links to go in your about page. It could be to your website or socials
@@ -39,26 +44,23 @@ let author = {
 let navi = [
     ['home','/index.html'],
     ['about','/about.html'],
-    ['archive','/archive.html'],
-    ['author', '/author.html'],
-    ['cast', '/cast.html']
+    ['archive','/archive.html']
 ]
 
 // --------------------------- # # # # #
 // // / / / // / / / / // / / / / / / / /
 
-//=// --- Posts --- //=// [2]
+//=// --- Pages --- //=// [2]
 /*
     This array is very important when it comes to the navigation between
     each post.
 
-    **ANYTIME** you add a new post to your site/blog, please add the file
-    location to the *bottom* of `postArchive`. This will keep the posts linked
-    together and in chronological order.
+    **ANYTIME** you add a new page to your comic/book/zine, please add the file
+    location to the *bottom* of whichever chapter you're in. This will keep the
+    posts linked together in the right order.
+
+    **Goes first to last from top to bottom.**
 */
-let postArchive = [
-    //['Title', 'Date', 'Location']
-]
 
 let meetChalice = [
     ['cover', '/assets/images/meet_chalice/FRONT.png', "October 1, 2021"],

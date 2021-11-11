@@ -20,6 +20,10 @@ let path = ".";
 // HTML lang attribute
 document.documentElement.setAttribute("lang", lang);
 
+// ---- Footer ---- ///
+let foot = '<div> Built using <a target="_blank" href="https://deadjournals.deadinsideartist.art//">DeadJournals</a> <br>&#169; Copyright ' + year.getFullYear() + ' ' + author.name + ' - All Rights Reserved</div>';
+document.getElementById('footer').innerHTML = foot;
+
 
 // About page
 let aboutAuthor = document.getElementById('aboutColumn');
