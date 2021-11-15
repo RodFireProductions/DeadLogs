@@ -27,8 +27,9 @@ document.getElementById('footer').innerHTML = foot;
 
 // About page
 let aboutAuthor = document.getElementById('aboutColumn');
+let aboutName = document.getElementById('aboutName');
 function aboutt(x){
-    aboutAuthor.innerHTML += x;
+    aboutName.innerHTML += x;
 }
 if (aboutAuthor != null) {
     if ( author.name != null) {
@@ -36,7 +37,7 @@ if (aboutAuthor != null) {
     } if ( author.title != null ) {
         aboutt('<div><i>' + author.title + '</i></div>');
     } if ( author.picture != null ) {
-        aboutt('<img style="height: 200px;" src="'+ author.picture +'">');
+        aboutAuthor.innerHTML += '<img src="'+ author.picture +'">';
     } if ( author.pronouns != null) {
         aboutt('<div>' + author.pronouns + '</div>');
     } if ( author.extra != null ) {

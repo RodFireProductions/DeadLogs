@@ -13,9 +13,9 @@
     --font-size     : 1em; /* Main text size */
     --title-size    : 36px; /* Page title font */
 
-    --text-color    : #000; /* Main text color */
-    --bg-color      : #ccc; /* Background color */
-    --back-color    : #eee; /* Background color of main area */
+    --text-color    : #eee; /* Main text color */
+    --bg-color      : #111; /* Background color */
+    --back-color    : #222; /* Background color of main area */
 
     --font-main     : monospace; /* The font used for almost everything */
     --font-title    : serif; /* The font used for page titles */
@@ -35,18 +35,6 @@ html { scrollbar-color: #eee #222; }
 body {
     background: var(--bg-color);
     font-size: var(--font-size);
-}
-
-#images {
-    width: 90%;
-    display: block;
-    margin: 0 auto;
-    padding-top: 10px;
-}
-
-#pageTitle {
-    text-align: center;
-    font-size: 2em;
 }
 
 p { text-indent: var(--text-indent); }
@@ -142,10 +130,6 @@ footer {
 
 .aboutcontent {
     min-height: 20px;
-    display: block;
-    margin-top: auto;
-    margin-bottom: auto;
-    justify-content: center;
 }
 
 .archive {
@@ -158,17 +142,4 @@ footer {
     padding: 10px;
     /*border-style: dotted;*/
 }
-#aboutColumn img { width: 300px; }
-
-#aboutName {
-    margin-bottom: 5px;
-}
-
-.aboutcols {
-    display: grid;
-    grid-auto-flow: column;
-}
-
-#comic_desc {
-    padding: 10px;
-}
+#aboutColumn img { height: 200px; }

@@ -119,7 +119,7 @@ if (aboutAuthor != null) {
     } if ( author.title != null ) {
         aboutt('<div><i>' + author.title + '</i></div>');
     } if ( author.picture != null ) {
-        aboutt('<img src="'+ author.picture +'">');
+        aboutt('<imgsrc="'+ author.picture +'">');
     } if ( author.pronouns != null) {
         aboutt('<div>' + author.pronouns + '</div>');
     } if ( author.extra != null ) {
