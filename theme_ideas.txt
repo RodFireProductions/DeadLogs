@@ -1,4 +1,0 @@
-Possible future themes:
-- Terminal (include different color options)
-- Webcomic (include character page to navigation and chapter options to archive) ( look into possible comment plugin sites )
-- Bubbly (include different color options)
