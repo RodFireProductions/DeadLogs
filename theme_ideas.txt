@@ -1,4 +1,13 @@
+Current themes:
+- Webcomic:
+	Look into possible comment plugin sites to recommend.
+
 Possible future themes:
-- Terminal (include different color options)
-- Webcomic (include character page to navigation and chapter options to archive) ( look into possible comment plugin sites )
-- Bubbly (include different color options)
+- Terminal: 
+	Include different color options.
+- Bubbly:
+	Include different color options.
+- Old School:
+	Use 98.css or a version of it to style everything.
+
+Possibly make versions with two to three columns instead of just one?

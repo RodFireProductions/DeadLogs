@@ -1,0 +1,5 @@
+|| Feature Ideas ||
+
+- Tags:
+	Making a tagging system for blog posts to
+	be able to filter through.
