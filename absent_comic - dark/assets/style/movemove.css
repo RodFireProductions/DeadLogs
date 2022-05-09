@@ -1,5 +1,0 @@
-
-@media only screen and (max-width: 750px) {
-    .aboutcols { grid-auto-flow: row; }
-    #aboutName { text-align: center; }
-}
