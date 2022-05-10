@@ -17,13 +17,7 @@ let siteName = 'My Site!';
 let lang = 'en'; // The language of your site. Example, en = english, fr = français (french), etc.
 let siteUrl = ''; // You can just put the url of your site here, whether that be a subdomain or custom.
 
-let socials = [
-    // Set up links to go in your about page. It could be to your website or socials
-    // Heck, even a rick roll if you're feeling like it.
-    ['My Blog', siteUrl] // Example: ['Twitter', 'https://twitter.com/(your account name)']
-];
-
-// Feel free to leave one of these values as 'null' if you don't wish to use them.
+// Put down your name and website/social media
 let author = {
     name: 'Your Name',
     url: ''

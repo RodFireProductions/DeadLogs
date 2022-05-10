@@ -132,10 +132,10 @@ h1 {
     padding: 10px;
 }
 #archivePage a, #recentPosts a {
-    color: var(--text-color);
+    color: var(--accent-color);
     text-decoration: underline;
 }
 #archivePage a:hover, #recentPosts a:hover {
-    color: var(--accent-color);
-    text-decoration: line-through;
+    color: var(--text-color);
+    text-decoration: none;
 }
