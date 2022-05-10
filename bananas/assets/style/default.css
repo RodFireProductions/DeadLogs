@@ -12,13 +12,13 @@
     --font-size     : 1.1em; /* Main text size */
     --title-size    : 36px; /* Page title font */
 
-    --text-color    : #222; /* Main text color */
-    --accent-color  : #7B3F43; /* The color used for links */
-    --title-color   : #061D24; /* Used for titles */
+    --text-color    : #02282b; /* Main text color */
+    --accent-color  : #1f7980; /* The color used for links */
+    --title-color   : #08464b; /* Used for titles */
 
     --bg-color      : #666; /* Background color */
-    --back-color    : #ccccccDD; /* Background color of main area */
-    --bg-image      : url("../images/background.webp"); /* https://www.toptal.com/designers/subtlepatterns/wheat-pattern/ */
+    --back-color    : #ffeca0EE; /* Background color of main area */
+    --bg-image      : url("../images/background.webp"); /* This is the image that's repeated in the background */
 
     --font-main     : sans-serif; /* The font used for almost everything */
     --font-title    : sans-serif; /* The font used for page titles */
@@ -36,6 +36,7 @@
 body {
     background: var(--bg-image) var(--bg-color) fixed;
     font-size: var(--font-size);
+    color: var(--text-color);
 
     line-height: 1.4;
     margin: 0px;
@@ -70,9 +71,6 @@ footer {
 }
 
 nav {
-    background-color: var(--nav-color);
-    color: var(--nav-txt-color);
-
     display: grid;
     grid-auto-columns: minmax(0, 1fr);
     grid-auto-flow: column;
@@ -125,7 +123,7 @@ h1 {
     text-align: center;
     text-decoration: none;
 }
-.changePost:hover { text-decoration: underline; color: var(--nav-txt-color); }
+.changePost:hover { text-decoration: underline; }
 
 #archivePage, #recentPosts {
     line-height: 1.3em;

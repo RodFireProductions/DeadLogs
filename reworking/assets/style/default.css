@@ -17,8 +17,8 @@
     --title-color   : #061D24; /* Used for titles */
 
     --bg-color      : #666; /* Background color */
-    --back-color    : #ffffffDD; /* Background color of main area */
-    --bg-image      : url("../images/background.webp"); /* This is the image that's repeated in the background */
+    --back-color    : #ccccccDD; /* Background color of main area */
+    --bg-image      : url("../images/background.webp"); /* https://www.toptal.com/designers/subtlepatterns/wheat-pattern/ */
 
     --font-main     : sans-serif; /* The font used for almost everything */
     --font-title    : sans-serif; /* The font used for page titles */
@@ -71,7 +71,6 @@ footer {
 }
 
 nav {
-
     display: grid;
     grid-auto-columns: minmax(0, 1fr);
     grid-auto-flow: column;
