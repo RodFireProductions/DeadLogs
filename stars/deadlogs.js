@@ -13,12 +13,9 @@
 
 //=// --- Basic Configs --- //=// [1]
 
-let siteName = "My Site!";
-let lang = "en"; // The language of your site. Example, en = english, fr = français (french), etc.
-let siteUrl = ""; // You can just put the url of your site here, whether that be a subdomain or custom.
-let year = ""; // The year you started your site.
-
-let date = new Date();
+let siteName = 'My Site!';
+let lang = 'en'; // The language of your site. Example, en = english, fr = français (french), etc.
+let siteUrl = ''; // You can just put the url of your site here, whether that be a subdomain or custom.
 
 let socials = [
     // Set up links to go in your about page. It could be to your website or socials
@@ -28,17 +25,20 @@ let socials = [
 
 // Feel free to leave one of these values as 'null' if you don't wish to use them.
 let author = {
-    name: 'Your Name'
+    name: 'Your Name',
+    url: ''
 };
 
+// This is where you define the pages that'll be in your navigation bar throughout the site.
 let navi = [
     ['home','/index.html'],
     ['about','/about.html'],
     ['archive','/archive.html']
 ];
 
+// This is the text that appears in the footer of your site. Feel free to customize it.
 let footer = `
-    &#169; ${year}-${date.getFullYear()} ${author.name} - All Rights Reserved
+    Owned & Written by <a href="${author.url}" target="_blank">${author.name}</a>
 `;
 
 // --------------------------- # # # # #
