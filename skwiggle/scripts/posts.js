@@ -26,11 +26,12 @@
 
 let url = window.location.pathname;
 
-let postlocation = url.substring(url.lastIndexOf('post/'));
+let postlocation = url.substring(url.lastIndexOf(folder+'/') + (folder.length + 1));
 let path = ".";
-if (url.includes('post/')) {
+if (url.includes(folder+'/')) {
     path = '..';
 }
+
 
 // ---- Post Organization ---- /// [2]
 
@@ -43,6 +44,9 @@ for (let i = 0; i < postArchive.length; i++) {
 let previous = postArchive[index-1];
 let next = postArchive[index+1];
 let currentLocation = postArchive[index];
+
+console.log(postlocation)
+console.log(currentLocation)
 
 // ---- Basic Injections ---- /// [3]
 
@@ -93,11 +97,11 @@ if ( postDate != null) {
 let postNav = document.getElementById('changePost');
 if (postNav != null) {
     if ( previous != null ) {
-        postNav.innerHTML += '<a class="changePost" href="../' + previous[2] +'">previous</a>';
+        postNav.innerHTML += '<a class="changePost" href="' + previous[2] +'">previous</a>';
     } else { postNav.innerHTML += "<div></div>" }
-    postNav.innerHTML += '<a class="changePost" href="' + path + navi[2][1] +'">' + navi[2][0] + '</a>';
+    postNav.innerHTML += '<a class="changePost" href="' + path + middleLink[1] +'">' + middleLink[0] + '</a>';
     if ( next != null ) {
-        postNav.innerHTML += '<a class="changePost" href="../' + next[2] +'">next</a>';
+        postNav.innerHTML += '<a class="changePost" href="' + next[2] +'">next</a>';
     } else { postNav.innerHTML += "<div></div>"  }
 }
 
@@ -109,7 +113,7 @@ if (archiveList != null) {
     a = postArchive.reverse()
     let w;
     for (w = 0; w < a.length; w++) {
-      archiveList.innerHTML += '<a class="changePost" href="'+ path + "/" + a[w][2] +'">'+ a[w][1]+ " -- " +a[w][0] +'</a><br>';
+      archiveList.innerHTML += '<a class="changePost" href="'+ folder + "/" + a[w][2] +'">'+ a[w][1]+ " ◉ " +a[w][0] +'</a><br>';
     }
 }
 
@@ -121,12 +125,12 @@ if (recent != null) {
     let r;
     if (a.length >= 3) {
         for (r = 0; r < 3; r++) {
-            recent.innerHTML += '<a class="changePost" href="'+ path + "/" + a[r][2] +'">'+ a[r][1]+ " -- " +a[r][0] +'</a><br>';
+            recent.innerHTML += '<a class="changePost" href="'+ folder + '/' + a[r][2] +'">'+ a[r][1]+ " ◉ " +a[r][0] +'</a><br>';
         }
     } else {
         for (r = 0; r < a.length; r++) {
-            recent.innerHTML += '<a class="changePost" href="'+ path + "/" + a[r][2] +'">'+ a[r][1]+ " -- " +a[r][0] +'</a><br>';
+            recent.innerHTML += '<a class="changePost" href="'+ folder + '/' + a[r][2] +'">'+ a[r][1]+ " ◉ " +a[r][0] +'</a><br>';
         }
     }
-    recent.innerHTML += '<a class="changePost" href="'+ path + "/" + navi[2][1] +'">'+ " See all "+'</a><br>';
+    recent.innerHTML += '<a class="changePost" href="'+ path + middleLink[1]+'">'+ " See all "+'</a><br>';
 }

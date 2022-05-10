@@ -37,6 +37,12 @@ let navi = [
     ['archive','/archive.html']
 ];
 
+// The link that holds the archive list.
+let middleLink = ['archive', '/archive.html'];
+// Name of folder your posts are in.
+let folder = 'post';
+
+
 let footer = `
     &#169; ${year}-${date.getFullYear()} ${author.name} - All Rights Reserved
 `;
@@ -58,6 +64,6 @@ let postArchive = [
     ['Example Polar Post', 'October 25, 2021 | 2:36pm', 'post/oct_25_2021_example.html'],
     ['Example Yet Post', 'October 26, 2021 | 11:07am', 'post/oct_26_2021_example2.html'],
     ['Example Dog Post', 'October 26, 2021 | 11:52am', 'post/oct_26_2021_example3.html']
-]
+];
 // --------------------------- # # # # #
 // // / / / // / / / / // / / / / / / / /
