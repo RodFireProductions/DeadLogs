@@ -1,5 +1,5 @@
 ---------------------------
-## DeadLogs ##
+## DeadLogs v1.0.0 ##
 ---------------------------
 
     Thank you for trying out my tool!
