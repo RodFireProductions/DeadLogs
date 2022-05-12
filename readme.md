@@ -9,4 +9,6 @@ _DeadLogs_ is a tool/template for making static blogs and sites. It's similar to
 
 Since _DeadLogs_ relies solely on plain HTML, CSS, and vanilla Javascript, making it static, it's able to be viewed locally without having to install extra technologies and can be hosted freely on plenty of hosting services.
 
+---
+
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/R6R34PDMQ)
