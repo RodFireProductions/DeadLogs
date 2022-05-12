@@ -1,8 +1,12 @@
 
-## DeadJournals ##
+## [DeadLogs](https://deadlogs.shroom.ink)
 
-Welcome to the DeadJournals repository.
+You can get started [here](https://deadlogs.shroom.ink/tutorial.html) and see examples [here](https://deadlogs.shroom.ink/examples.html).
 
-DeadJournals is a tool for making static blogs and webcomic sites using HTML, CSS, and vanilla Javascript. HTML and Javascript (array and dictionary) knowledge is recommended to begin working with DeadJournals.
+---
+
+_DeadLogs_ is a tool/template for making static blogs and sites. It's similar to and inspired by [Zonelets](https://zonelets.net/index.html).
+
+Since _DeadLogs_ relies solely on plain HTML, CSS, and vanilla Javascript, making it static, it's able to be viewed locally without having to install extra technologies and can be hosted freely on plenty of hosting services.
 
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/R6R34PDMQ)

@@ -1,0 +1,141 @@
+/*
+    Rodrick hates their life.
+--------------------------- # # # # #
+
+    This is the default theme: Absent!
+
+    Feel free to edit the variables under `:root`
+    to your liking.
+*/
+
+:root {
+    --font-size     : 1.1em; /* Main text size */
+    --title-size    : 36px; /* Page title font */
+
+    --text-color    : #02282b; /* Main text color */
+    --accent-color  : #1f7980; /* The color used for links */
+    --title-color   : #08464b; /* Used for titles */
+
+    --bg-color      : #666; /* Background color */
+    --back-color    : #ffeca0EE; /* Background color of main area */
+    --bg-image      : url("../images/background.webp"); /* This is the image that's repeated in the background */
+
+    --font-main     : sans-serif; /* The font used for almost everything */
+    --font-title    : sans-serif; /* The font used for page titles */
+    --text-indent   : 0em; /* The width of paragraph indents. Just put `0px` if you don't want any. */
+
+    --hr-style      : dotted; /* Horizontal line style */
+}
+
+/* */
+.center { text-align: center;}
+.right { text-align: right; }
+
+/*////////////////////////////////////////////////////////////////////////////*/
+/* CSS that you *shouldn't* be messing with unless you know what you're doing */
+body {
+    background: var(--bg-image) var(--bg-color) fixed;
+    font-size: var(--font-size);
+    color: var(--text-color);
+
+    line-height: 1.4;
+    margin: 0px;
+}
+
+mark, ::selection { background: var(--accent-color); color: var(--back-color); }
+
+
+p { text-indent: var(--text-indent); }
+
+a { color: var(--accent-color); }
+a:hover { color: var(--text-color); }
+
+hr { border: none; border-bottom: var(--hr-style); }
+header hr, #seperator { border-bottom: var(--hr-style) var(--accent-color); }
+
+header {
+    text-align: center;
+    line-height: .2;
+}
+
+main {
+    min-height: 20px;
+    margin: 10px;
+}
+
+footer {
+    text-align: center;
+    font-size: .8em;
+    opacity: .8;
+    margin: 5px;
+}
+
+nav {
+    display: grid;
+    grid-auto-columns: minmax(0, 1fr);
+    grid-auto-flow: column;
+    padding: 5px;
+}
+
+nav a {
+    text-align: center;
+}
+
+h1 {
+    font-family: var(--font-title);
+    font-size: var(--title-size);
+    color: var(--title-color);
+    letter-spacing: 5px;
+
+    line-height: 1.1;
+}
+
+#container {
+    background-color: var(--back-color);
+    color: var(--text-color);
+    font-family: var(--font-main);
+
+    width: 70%;
+    min-height: 100px;
+    margin: 25px auto;
+
+    padding: 20px;
+}
+
+@media only screen and (max-width: 625px) {
+	#container {
+        width: 90% !important;
+        margin: 0px auto !important;
+        margin-top: 25px !important;
+    }
+}
+
+#changePost {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 5px;
+}
+
+.changePost {
+    justify-self: center;
+    text-align: center;
+    text-decoration: none;
+}
+.changePost:hover { text-decoration: underline; }
+
+#archivePage, #recentPosts {
+    line-height: 1.3em;
+    margin: 10px auto;
+    text-align: center;
+    padding: 10px;
+}
+#archivePage a, #recentPosts a {
+    color: var(--accent-color);
+    text-decoration: underline;
+}
+#archivePage a:hover, #recentPosts a:hover {
+    color: var(--text-color);
+    text-decoration: none;
+}
