@@ -11,4 +11,8 @@ Since _DeadLogs_ relies solely on plain HTML, CSS, and vanilla Javascript, makin
 
 ---
 
+If you wish to contribute, please do so to the development branch.
+
+---
+
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/R6R34PDMQ)
