@@ -39,7 +39,7 @@ let folder = 'post';
 
 // This is the text that appears in the footer of your site. Feel free to customize it.
 let footer = `
-    Owned & Written by &#8249;a href="${author.url}" target="_blank">${author.name}</a>
+    Owned & Written by <a href="${author.url}" target="_blank">${author.name}</a>
 `;
 
 // --------------------------- # # # # #
